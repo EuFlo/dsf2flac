@@ -1,3 +1,22 @@
+## Install Deps
+```
+ sudo apt install cmake
+ sudo apt install flac-dev
+ sudo apt install libflac-dev
+ sudo apt install libflac++-dev
+ sudo apt install libboost-filesystem-dev
+ sudo apt install libboost-timer-dev
+ sudo apt install libboost-system-dev
+ sudo apt install libtool
+ sudo apt install ffmpeg
+ sudo apt install libid3-dev
+ sudo apt install libtag1-dev
+```
+Usage：
+```
+dsf2flac -d -i 02\ -\ Elton\ John\ -\ Candle\ In\ The\ Wind.dff -o - 2>/dev/null | ffmpeg -i - -c pcm_s32le  -f alsa hw:2
+```
+
 dsf2flac - ~http://code.google.com/p/dsf2flac/~
 
 # Introduction
