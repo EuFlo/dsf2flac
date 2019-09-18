@@ -22,6 +22,15 @@ find . -type f -print0 | while read -d $'\0' file; do dsf2flac -d -i $file -o - 
 
 find . -type f \( -name "*.dff" -o -name "*.dsf" \) -print0 | sort -z | while read -d $'\0' file; do dsf2flac -d -i $file -o - 2>/dev/null| ffmpeg -i - -c pcm_s32le  -f alsa hw:2;done
 ```
+a shell script
+```bash
+#!/bin/bash
+dir=$1
+echo $dir
+find $dir -type f \( -name "*.dff" -o -name "*.dsf" \) -print0 | sort -z | while read -d $'\0' file; do echo $file;done
+find $dir -type f \( -name "*.dff" -o -name "*.dsf" \) -print0 | sort -z | while read -d $'\0' file; do dsf2flac -d -i $file -o - 2>/dev/null| ffmpeg -i - -c pcm_s32le  -f alsa hw:2;done
+
+```
 
 dsf2flac - ~http://code.google.com/p/dsf2flac/~
 
