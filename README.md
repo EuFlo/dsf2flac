@@ -1,7 +1,6 @@
 ## Install Deps
 ```
  sudo apt install cmake
- sudo apt install flac-dev
  sudo apt install libflac-dev
  sudo apt install libflac++-dev
  sudo apt install libboost-filesystem-dev
@@ -12,9 +11,16 @@
  sudo apt install libid3-dev
  sudo apt install libtag1-dev
 ```
-Usage：
+### Usage：
+play one music file
 ```
 dsf2flac -d -i 02\ -\ Elton\ John\ -\ Candle\ In\ The\ Wind.dff -o - 2>/dev/null | ffmpeg -i - -c pcm_s32le  -f alsa hw:2
+```
+play some folder
+```
+find . -type f -print0 | while read -d $'\0' file; do dsf2flac -d -i $file -o - 2>/dev/null| ffmpeg -i - -c pcm_s32le  -f alsa hw:2;done
+
+find . -type f \( -name "*.dff" -o -name "*.dsf" \) -print0 | sort -z | while read -d $'\0' file; do dsf2flac -d -i $file -o - 2>/dev/null| ffmpeg -i - -c pcm_s32le  -f alsa hw:2;done
 ```
 
 dsf2flac - ~http://code.google.com/p/dsf2flac/~
