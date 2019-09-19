@@ -1,15 +1,15 @@
 ## Install Deps
 ```
- sudo apt install cmake
- sudo apt install libflac-dev
- sudo apt install libflac++-dev
- sudo apt install libboost-filesystem-dev
- sudo apt install libboost-timer-dev
- sudo apt install libboost-system-dev
- sudo apt install libtool
- sudo apt install ffmpeg
- sudo apt install libid3-dev
- sudo apt install libtag1-dev
+ sudo apt install cmake -y
+ sudo apt install libflac-dev -y
+ sudo apt install libflac++-dev -y
+ sudo apt install libboost-filesystem-dev -y
+ sudo apt install libboost-timer-dev -y
+ sudo apt install libboost-system-dev -y
+ sudo apt install libtool -y
+ sudo apt install ffmpeg -y
+ sudo apt install libid3-dev -y
+ sudo apt install libtag1-dev -y
 ```
 ### Usage：
 play one music file
