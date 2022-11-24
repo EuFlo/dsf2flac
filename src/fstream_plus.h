@@ -51,6 +51,8 @@
 #include <fstream>
 #include "dsf2flac_types.h"
 
+using namespace std;
+
 typedef dsf2flac_uint64 stream_size;
 
 class fstreamPlus : public std::fstream
